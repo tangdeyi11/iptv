@@ -110,7 +110,7 @@ async function handleRequest(event) {
 
     // 返回修改后的内容
     return new Response(content, {
-      headers: { "Content-Type": "text/plain" }
+      headers: { "Content-Type": "text/plain; charset=utf-8" }
     });
   }
 
