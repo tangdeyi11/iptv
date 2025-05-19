@@ -6,7 +6,7 @@ async function handleRequest(request, env) {
   const url = new URL(request.url);
   const pathname = url.pathname;
 
-  // ✅ 安全欢迎页（不暴露任何路径）
+  // ✅ 安全欢迎页（不暴露任何路径信息）
   if (pathname === "/") {
     return new Response(`
       <html>
