@@ -15,7 +15,7 @@ async function handleRequest(event) {
   const request = event.request;
   const url = new URL(request.url);
   const pathname = url.pathname;
-  const kv = REPLACE_KV; // 替换为你的 KV 绑定名
+  const kv = IPTV_KV; // 替换为你的 KV 绑定名
 
   if (pathname === "/") {
     return new Response(`
