@@ -1,6 +1,8 @@
-addEventListener("fetch", event => {
-  event.respondWith(handleRequest(event));
-});
+export default {
+  async fetch(request, env) {
+    return handleRequest(request, env);
+  }
+};
 
 function jsStringEscape(str) {
   return str
@@ -15,7 +17,7 @@ async function handleRequest(event) {
   const request = event.request;
   const url = new URL(request.url);
   const pathname = url.pathname;
-  const kv = IPTV_KV; // 替换为你的 KV 绑定名
+  const kv = REPLACE_KV; // 替换为你的 KV 绑定名
 
   if (pathname === "/") {
     return new Response(`
