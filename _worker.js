@@ -13,11 +13,10 @@ function jsStringEscape(str) {
     .replace(/\r/g, '\\r');
 }
 
-async function handleRequest(event) {
-  const request = event.request;
+async function handleRequest(request, env) {
   const url = new URL(request.url);
   const pathname = url.pathname;
-  const kv = REPLACE_KV; // 替换为你的 KV 绑定名
+  const kv = env.IPTV_KV; // KV 绑定
 
   if (pathname === "/") {
     return new Response(`
